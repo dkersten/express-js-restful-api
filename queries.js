@@ -2,13 +2,6 @@ import { pool } from 'dbinfo.js'
 const { response } = require('express')
 
 const Pool = require('pg').Pool
-// const pool = new Pool({
-//     user: me,
-//     host: 'localhost',
-//     database: 'api',
-//     password: 'password',
-//     port: 5432,
-// })
 
 const getUsers = (request, response) => {
     pool.query('SELECT * FROM users ORDER BY id ASC', (error, results) => {
